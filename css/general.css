@@ -1,0 +1,264 @@
+ /* https://coolors.co/151e3f-030027-f2f3d9-dc9e82-c16e70 */
+
+ @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&family=Lobster+Two:ital@1&display=swap');
+
+
+.color-complement-0 { color: #C16E70 }
+.color-complement-1 { color: #DC9E82 }
+.color-complement-2 { color: #F2F3D9 }
+.color-complement-3 { color: #030027 }
+.color-complement-3 { color: #151E3F}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img {
+  object-fit: cover;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 20vh auto 1fr;
+  background: linear-gradient(
+    30deg,
+    #DC9E82 0%,
+    #F2F3D9 81%
+  );
+}
+
+h1, h2, h3 {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 5vh;
+}
+
+a, p {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: bold;
+  font-weight: 16px;
+}
+
+section  h2 {
+  color:#151E3F;
+  padding: 5vh;
+}
+
+header img {
+  height: 15vh;
+  width: 15vh;
+  max-width: 150px;
+  margin: 8px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-color: #151E3F;
+}
+
+header > img:nth-child(1) {
+  position: relative;
+  animation: animacion 3s;
+}
+
+header > div {
+  animation: titulo 7s;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  text-align: center;
+}
+
+nav a {
+  width: 100%; 
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: solid 3px black;
+  color: #151E3F;
+  background-color: #DC9E82;
+  margin: 5px;
+}
+
+main {
+  display: grid;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 3px black;
+  background-color: #C16E70;
+  margin: 1vh;
+  position:relative;
+  padding-bottom: 8vh;
+}
+
+section div {
+  display:none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+div button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+p {
+  text-align: justify;
+  margin: 8px;
+}
+
+section a {
+  border: solid 3px #C16E70;
+  background-color: #030027;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  position: absolute;
+  bottom: 10px;
+}
+
+footer {
+  background-color: #151E3F;
+  color: white;
+  padding:3vh 1vh 0vh 1vh;
+  height: 100%;
+}
+
+footer::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+footer > h3:first-of-type {
+  float: left;
+}
+
+footer > h3:last-of-type {
+  float: right;
+}
+
+footer > h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+  line-height: 100%;
+}
+
+/* Tablet */
+@media screen and (min-width: 800px) and (orientation:portrait), (orientation:landscape) {
+main {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+}
+main > section:first-of-type {
+  grid-column: 1;
+  grid-row: 1;
+}
+main >section:nth-of-type(2) {
+  grid-column: 2;
+  grid-row:1;
+}
+main >section:last-of-type {
+  grid-column: 1 / 3;
+}
+
+
+}
+
+/* PC */
+@media screen and (min-width: 1200px) {
+
+  body {
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 20vh 70vh 10vh;
+    grid-gap:3vh;
+  }
+  
+  header {
+    grid-column: 1 / 5;
+    grid-row: 1;
+  }
+  nav {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    flex-direction: column;
+    
+  }
+
+  nav a {
+    margin-top: 20px;
+  }
+  
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-row: 2;
+    grid-column: 2 / 5;
+  }
+  
+  main >section:first-of-type {
+    grid-column: 1;
+  }
+
+  main >section:nth-of-type(2) {
+    grid-column: 2;
+  }
+
+  main >section:last-of-type {
+    grid-column: 3;
+  }
+
+  footer {
+    grid-row:3;
+    grid-column: 1 / 5;
+  }
+  }
+
+
+@keyframes animacion {
+  0% {
+    left: 90%;
+    opacity: 0;
+  }
+  100% {
+    left: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes titulo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
